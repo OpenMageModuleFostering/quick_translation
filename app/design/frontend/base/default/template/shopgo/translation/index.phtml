@@ -1,0 +1,188 @@
+<div class="ui one column page grid stackable">
+
+	<div class="row">
+		<div class="column">
+			<h2 class="ui header">
+				<i class="settings icon"></i>
+				<div class="content">
+					Shopgo Translation
+					<div class="sub header"></div>
+				</div>
+			</h2>
+<?php
+/*
+ * $locale_dir = Mage::getBaseDir() . DS . 'app' . DS . 'locale' . DS; if ($handle = opendir($locale_dir)) { $blacklist = array('.', '..'); while (false !== ($file = readdir($handle))) { if (!in_array($file, $blacklist)) { echo '<a href="#" class="ui green button lang">' . $file . '</a>'; } } closedir($handle); }
+ */
+?>
+
+<div class="langContainer"></div>
+			<div class="langCSVContainer">
+
+				<div class="ui divided list"></div>
+
+			</div>
+
+
+
+			<div class="ui modal csvModal">
+				<i class="close icon"></i>
+				<div class="header">Update CSV</div>
+				<div class="content">
+					<!-- <div class="ui form segment">
+  <div class="two fields">
+    <div class="field">
+      <label>First Name</label>
+      <input placeholder="First Name" type="text">
+    </div>
+    <div class="field">
+      <label>Last Name</label>
+      <input placeholder="Last Name" type="text">
+    </div>
+  </div>
+  
+  <div class="ui blue submit button">Save</div>
+</div> -->
+
+					<div class="ui form">
+						<div class="field">
+							<label id="CSVFileName"></label>
+							<textarea id="csvData"></textarea>
+						</div>
+						<div class="ui blue submit button saveBtn">Save</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	
+	getLang();
+	
+	
+	
+
+	$('html').on('click', '.langContainer .langBtn', function() {
+		//console.log($(this).html());
+		window.currentLang = $(this).html();
+
+		var request = $.ajax({
+			  url: "<?php echo Mage::getBaseUrl() . 'shopgo_translation/index/getCSV' ?>",
+			  type: "POST",
+			  data: { 
+					lang: $(this).html(),
+				},
+			  dataType: "JSON"
+			});
+			 
+			request.done(function( data ) {
+				$('.langCSVContainer .list').empty();
+			  $.each(data, function(index, value) {
+					$('.langCSVContainer .list').append('<div class="item">\
+						    <div class="right floated tiny teal ui button">View Listing</div>\
+						    \
+						    <div class="content">\
+						      <div class="header">' + value + '</div>\
+						    </div>\
+						  </div>');
+				});
+			});
+			 
+			request.fail(function( jqXHR, textStatus ) {
+			  
+			});
+		
+	});
+
+	$('html').on('click', '.langCSVContainer .list .item .button', function() {
+		var CSVFileName = $(this).parent().find('.header').html();
+		//var CSVFileName = $('#CSVFileName').html();
+		$('#CSVFileName').html(CSVFileName);
+		//console.log($(this).parent().find('.header').html());
+		var request = $.ajax({
+			  url: "<?php echo Mage::getBaseUrl() . 'shopgo_translation/index/getCSVData' ?>",
+			  type: "POST",
+			  data: { 
+					lang: window.currentLang,
+					csv: CSVFileName
+				},
+			  dataType: "JSON"
+			});
+			 
+			request.done(function( data ) {
+				//console.log(data);
+				$('#csvData').val(data[CSVFileName]);
+				$('.csvModal').modal('show');
+			});
+			 
+			request.fail(function( jqXHR, textStatus ) {
+			  
+			});
+	});
+
+	$('html').on('click', '.csvModal .saveBtn', function() {
+		//var CSVFileName = $(this).parent().parent().parent().find('.header').html();
+		//var CSVFileName = $('#CSVFileName').html();
+		//console.log(CSVFileName);
+		var request = $.ajax({
+			  url: "<?php echo Mage::getBaseUrl() . 'shopgo_translation/index/saveCSV' ?>",
+			  type: "POST",
+			  data: { 
+					lang: window.currentLang,
+					csv: $('#CSVFileName').html(),
+					csv_file_content: $('#csvData').val()
+				},
+			  dataType: "JSON"
+			});
+			 
+			request.done(function( data ) {
+				
+				$('.csvModal').modal('hide');
+			});
+			 
+			request.fail(function( jqXHR, textStatus ) {
+			  
+			});
+	});
+});
+
+//get lang
+
+function getLang() {
+	var request = $.ajax({
+		  url: "<?php echo Mage::getBaseUrl() . 'shopgo_translation/index/getLang' ?>",
+		  type: "POST",
+		  data: {  },
+		  dataType: "JSON"
+		});
+		 
+		request.done(function( data ) {
+			$('.langContainer').empty();
+		  	$.each(data, function(index, value) {
+				$('.langContainer').append('<a href="#" class="ui green button langBtn">' + value + '</a>');
+			});
+		});
+		 
+		request.fail(function( jqXHR, textStatus ) {
+		  
+		});
+}
+
+</script>
+
+
+
+
+<!-- 
+<a class="ui black button">Black Button</a>
+<a class="ui green button">Green BUtton</a>
+<a class="ui red button">Red Button</a>
+<a class="ui blue button">Blue Button</a>
+-->

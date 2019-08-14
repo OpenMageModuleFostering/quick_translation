@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+    </default>
+    <shopgo_translation_index_index>
+        <remove name="header"/> 
+        <remove name="footer"/> 
+        <reference name="root">
+            <action method="setTemplate">
+                <template>shopgo/translation/layout.phtml</template>
+            </action>
+        </reference>       				       
+    </shopgo_translation_index_index>
+    
+</layout>

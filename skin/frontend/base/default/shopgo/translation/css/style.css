@@ -1,0 +1,43 @@
+body {
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+div.main-container {
+    /*width: 88%;*/
+    margin: auto;
+}
+
+.mtspace {
+    margin-top: 15px !important;
+}
+
+.mbspace {
+    margin-bottom: 15px !important;
+}
+
+.ui.segment>:nth-child(2) {
+    margin-top: 0;
+}
+
+.ui.form .field .error.dropdown {
+    background-color: #FFFAFA;
+    border-color: #E7BEBE;
+    border-left: 0;
+    color: #D95C5C;
+    padding-left: 1.2em;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    -webkit-box-shadow: .3em 0 0 0 #D95C5C inset;
+    -moz-box-shadow: .3em 0 0 0 #D95C5C inset;
+    box-shadow: .3em 0 0 0 #D95C5C inset;
+}
+
+.ui.form .ui.dropdown {
+    width: 75%;
+}
+
+.langCSVContainer {
+	margin-top: 25px;
+height: 500px;
+overflow-x: hidden;
+}

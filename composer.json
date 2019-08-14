@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Quick_Translation",
+    "type": "magento-module",
+    "license": "OSL",
+    "homepage": "",
+    "description": "Quick Translation extension first release.",
+    "authors": [
+    {
+        "name": "Moe",
+        "email": "moe@shopgo.me"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

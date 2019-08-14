@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <modules>
+    <Shopgo_Translation>
+      <version>0.0.1</version>
+    </Shopgo_Translation>
+  </modules>
+
+  <global>
+    <blocks>
+      <shopgo_translation>
+        <class>Shopgo_Translation_Block</class>
+      </shopgo_translation>
+    </blocks>
+
+    <models>
+      <Shopgo_Translation>
+        <class>Shopgo_Translation_Model</class>
+      </Shopgo_Translation>
+    </models>
+
+    <helpers>
+      <Shopgo_Translation>
+        <class>Shopgo_Translation_Helper</class>
+      </Shopgo_Translation>  
+    </helpers>
+  </global>
+
+  <frontend>
+    <routers>
+      <shopgo_translation>
+        <use>standard</use>
+        <args>
+          <module>Shopgo_Translation</module>
+          <frontName>shopgo_translation</frontName>
+        </args>
+      </shopgo_translation>
+    </routers>
+
+    <layout>
+      <updates>
+        <Shopgo_Translation>
+          <file>shopgo/translation.xml</file>
+        </Shopgo_Translation>
+      </updates>
+    </layout>
+  </frontend>  
+
+  <admin>
+    <routers>
+      <shopgo_translation>
+          <use>admin</use>
+          <args>
+            <module>Shopgo_Translation</module>
+            <frontName>shopgo_translation</frontName>
+          </args>
+      </shopgo_translation>
+    </routers>
+  </admin>
+
+  <adminhtml>
+    <menu>
+      <shopgo_translation translate="title" module="Shopgo_Translation">
+        <title>Shopgo Translation</title>
+        <action>shopgo_translation/admin/index</action>
+        <sort_order>100</sort_order>
+      </shopgo_translation>
+    </menu>
+
+    <acl>
+      <resources>
+        <admin>
+          <children>
+            <shopgo_translation translate="title" module="Shopgo_Translation">
+              <title>Shopgo Translation</title>
+              <sort_order>100</sort_order>
+            </shopgo_translation>
+          </children>
+        </admin>
+      </resources>
+    </acl>
+  </adminhtml>    
+</config>
+

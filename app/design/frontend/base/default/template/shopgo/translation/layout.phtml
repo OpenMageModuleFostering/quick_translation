@@ -1,0 +1,93 @@
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title><?php echo ''; ?></title>
+        
+        <link rel="icon" href="<?php echo ''; ?>" type="image/x-icon">
+        <link rel="shortcut icon" href="<?php echo ''; ?>" type="image/x-icon">
+        
+        <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700" rel="stylesheet" type="text/css"></link>
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/packaged/css/semantic.min.css' ?>" media="all"></link>
+        <!--<link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/font-awesome/css/font-awesome.min.css' ?>" media="all"></link>-->
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/css/style.css' ?>" media="all"></link>
+        
+        <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'Shopgo/Translation/jquery-2.0.3.min.js' ?>"></script>
+        <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'Shopgo/Translation/easing.js' ?>"></script>
+        <!--<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'Shopgo/Translation/jquery-no-conflict.js' ?>"></script>-->
+        <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/packaged/javascript/semantic.min.js' ?>" media="all"></script>
+        <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS) . 'Shopgo/Translation/script.js' ?>"></script>
+        <!--
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/button.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/divider.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/header.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/icon.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/image.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/input.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/label.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/loader.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/progress.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/segment.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/elements/step.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/collections/breadcrumb.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/collections/form.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/collections/grid.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/collections/menu.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/collections/message.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/collections/table.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/views/comment.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/views/feed.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/views/item.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/views/list.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/modal.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/dropdown.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/popup.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/reveal.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/rating.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/sidebar.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/shape.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/tab.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/checkbox.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/dimmer.min.css' ?>" media="all">
+        <link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/transition.min.css' ?>" media="all">
+            
+        <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/behavior/api.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/behavior/state.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/checkbox.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/dimmer.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/dropdown.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/modal.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/popup.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/rating.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/sidebar.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/tab.js' ?>" ></script>
+        <script type="stylesheet" type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_SKIN) . 'frontend/base/default/shopgo/translation/semantic/minified/modules/transition.js' ?>" ></script>
+        -->
+    </head>
+    <body<?php echo $this->getBodyClass() ? ' class="' . $this->getBodyClass() . '"' : '' ?>>
+        <?php echo $this->getChildHtml('after_body_start') ?>
+        <div class="wrapper">
+            <?php echo $this->getChildHtml('global_notices') ?>
+            <div class="page">
+                <?php echo $this->getChildHtml('header') ?>
+                <div class="main-container col1-layout">
+                    <div class="main">
+                        <?php echo $this->getChildHtml('breadcrumbs') ?>
+                        <div class="col-main">
+                            <?php echo $this->getChildHtml('global_messages') ?>
+                            <?php echo $this->getChildHtml('content') ?>
+                        </div>
+                    </div>
+                </div>
+                <?php echo $this->getChildHtml('footer') ?>
+                <?php echo $this->getChildHtml('before_body_end') ?>
+            </div>
+        </div>
+        <?php echo $this->getAbsoluteFooter() ?>
+    </body>
+</html>

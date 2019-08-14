@@ -117,8 +117,15 @@ $(document).ready(function() {
 			});
 			 
 			request.done(function( data ) {
+
+				var fileData = '';
 				//console.log(data);
-				$('#csvData').val(data[CSVFileName]);
+				$.each(data[CSVFileName], function(index, value) {
+					//console.log(value);
+					fileData += value;
+				});
+				//$('#csvData').val((data[CSVFileName]));
+				$('#csvData').val(fileData);
 				$('.csvModal').modal('show');
 			});
 			 

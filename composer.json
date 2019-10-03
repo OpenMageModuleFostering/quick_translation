@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Quick_Translation",
+    "name": "openmage-module-fostering\/quick_translation",
     "type": "magento-module",
-    "license": "OSL",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "Quick Translation extension first release.",
     "authors": [
